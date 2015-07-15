@@ -135,6 +135,7 @@ implements SurfaceHolder.Callback {
             ViewGroup.LayoutParams.MATCH_PARENT,
             Gravity.CENTER
         ));
+
         scannerSurface.getHolder().addCallback(this);
 
         // Add preview SurfaceView to the screen
@@ -208,6 +209,7 @@ implements SurfaceHolder.Callback {
     public void onDestroy ()
     {
         scanner.destroy();
+        releaseCamera();
         super.onDestroy();
     }
 
